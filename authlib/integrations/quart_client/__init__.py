@@ -1,14 +1,14 @@
 # flake8: noqa
 
 from ..base_client import BaseOAuth, OAuthError
-from .integration import QuartIntegration
-from .apps import QuartOAuth1App, QuartOAuth2App
+from .integration import StarletteIntegration
+from .apps import StarletteOAuth1App, StarletteOAuth2App
 
 
 class OAuth(BaseOAuth):
-    oauth1_client_cls = QuartOAuth1App
-    oauth2_client_cls = QuartOAuth2App
-    framework_integration_cls = QuartIntegration
+    oauth1_client_cls = StarletteOAuth1App
+    oauth2_client_cls = StarletteOAuth2App
+    framework_integration_cls = StarletteIntegration
 
     def __init__(self, config=None, cache=None, fetch_token=None, update_token=None):
         super().__init__(
@@ -18,5 +18,5 @@ class OAuth(BaseOAuth):
 
 __all__ = [
     'OAuth', 'OAuthError',
-    'QuartIntegration', 'QuartOAuth1App', 'QuartOAuth2App',
+    'StarletteIntegration', 'StarletteOAuth1App', 'StarletteOAuth2App',
 ]
